@@ -1,43 +1,6 @@
-English Version Below
+# Welcome to my next js sample work
 
-# Bienvenue à ma soumission pour LILA
-
-- Déployé sur Vercel [ici](lila-demo-seven.vercel.app)
-
-![texte alternatif](image-4.png)
-
-## Mon processus de travail
-
-J'ai commencé par définir des user stories et critères d'acceptation - comme on le ferait dans JIRA  
-![texte alternatif](image.png)
-
-### J'ai d'abord travaillé sur le back-end :
-
-- J'ai déployé Supabase sur un Droplet DigitalOcean et l'ai hébergé sur un domaine : [https://jupiter-consulting.store](https://jupiter-consulting.store)
-  - Pour le mot de passe si vous souhaitez le voir, merci de me contacter par email.
-
-L'hébergement d'un serveur auto-géré est très intéressant car cela permet de contourner les limites de bande passante, nombre d'utilisateurs et autres restrictions arbitraires, tout en gardant le contrôle du déploiement.  
-![texte alternatif](image-2.png)
-
-Il est également possible de configurer des sauvegardes :  
-![texte alternatif](image-1.png)
-
-- J'ai développé les routes API pour récupérer les données de Shopify via GraphQL. J'ai utilisé le package `shopify-api-node`.
-- Après avoir défini les données GraphQL nécessaires, j'ai créé les structures de tables dans Supabase.
-- J'ai implémenté les routes API pour charger les données dans Supabase en évitant les doublons.
-- J'ai travaillé sur la récupération des données depuis Supabase vers la console.
-
-### Puis je me suis concentré sur le front-end :
-
-- La barre de navigation latérale en premier.
-- Ensuite la page produits et les fiches produit individuelles.
-- Enfin, j'ai construit la grille pour les graphiques - j'ai (élégamment) obtenu l'aide de l'IA pour cette partie, en la guidant pour créer les visualisations souhaitées.
-
----
-
-# Welcome to my submission for LILA
-
-- Deployed on Vercel [here](lila-demo-seven.vercel.app)
+- Deployed on Vercel [here]()
 
 ![alt text](image-4.png)
 
