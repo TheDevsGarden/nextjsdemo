@@ -1,8 +1,6 @@
 # Welcome to my next js sample work
 
-- Deployed on Vercel [here]()
-
-![alt text](image-4.png)
+- Deployed on Vercel [here](https://nextjsdemo-tau-five.vercel.app/)
 
 ## How I worked
 
