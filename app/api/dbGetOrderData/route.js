@@ -40,26 +40,30 @@ export async function GET(request) {
       if (error) throw error;
 
       const result = NextResponse.json({
-        orders: data,
-        totalCount: count,
+        orders: data || [],
+        totalCount: count || 0,
         page,
         limit,
-        totalPages: Math.ceil(count / limit),
+        totalPages: Math.ceil((count || 0) / limit),
       });
 
-      console.log(result);
       return result;
     }
   } catch (error) {
     console.error("Database Error:", error);
-    return NextResponse.json(
-      {
-        error: "Failed to fetch order data",
-        message: error.message,
-        details:
-          process.env.NODE_ENV === "development" ? error.stack : undefined,
-      },
-      { status: 500 }
-    );
+
+    // Return a proper JSON error response instead of HTML
+    const errorResponse = {
+      error: "Failed to fetch order data",
+      message: error.message || "Database connection timeout",
+      details: process.env.NODE_ENV === "development" ? error.stack : undefined,
+    };
+
+    return NextResponse.json(errorResponse, {
+      status: error.code === 'PGRST116' ? 504 : 500,
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
   }
 }
