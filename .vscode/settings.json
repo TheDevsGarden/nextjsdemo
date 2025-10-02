@@ -1,0 +1,15 @@
+{
+    "workbench.colorCustomizations": {
+        "[Monokai Pro Light (Filter Sun)]": {
+            "editor.background": "#ffffff"
+        },
+        "[Alabaster]": {
+            "editor.background": "#ffffff"
+        },
+        "activityBar.background": "#500C59",
+        "titleBar.activeBackground": "#70117D",
+        "titleBar.activeForeground": "#FEFCFF",
+        "statusBar.background": "#70117D",
+        "statusBar.foreground": "#FEFCFF"
+    }
+}

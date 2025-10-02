@@ -172,7 +172,9 @@ const OrderCountChart: React.FC<OrderCountChartProps> = ({ timeRange }) => {
           throw new Error('Invalid data format');
         }
 
+        console.log('Order API Response:', data);
         const processedData = processOrderData(data.orders, timeRange);
+        console.log('Processed Order Data:', processedData);
         setChartData(processedData);
       } catch (err) {
         console.error('Error fetching order data:', err);

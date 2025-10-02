@@ -32,9 +32,10 @@ interface RevenueData {
 
 interface RevenueChartProps {
   timeRange: TimeRange;
+  onErrorChange?: (hasError: boolean) => void;
 }
 
-const RevenueChart: React.FC<RevenueChartProps> = ({ timeRange }) => {
+const RevenueChart: React.FC<RevenueChartProps> = ({ timeRange, onErrorChange }) => {
   const [revenueData, setRevenueData] = useState<RevenueData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -182,12 +183,16 @@ const RevenueChart: React.FC<RevenueChartProps> = ({ timeRange }) => {
           throw new Error('Invalid data format');
         }
 
+        console.log('Revenue API Response:', data);
         const processedData = processOrdersForRevenueChart(data.orders, timeRange);
+        console.log('Processed Revenue Data:', processedData);
         setRevenueData(processedData);
+        if (onErrorChange) onErrorChange(false);
       } catch (err) {
         console.error('Error fetching order data:', err);
         setError('Failed to load order data');
-        
+        if (onErrorChange) onErrorChange(true);
+
         setRevenueData(generateSampleData(timeRange));
       } finally {
         setLoading(false);
